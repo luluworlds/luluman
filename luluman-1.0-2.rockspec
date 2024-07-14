@@ -1,4 +1,5 @@
 package = "luluman"
+rockspec_format = "3.0"
 version = "1.0-2"
 description = {
    summary = "teeworlds huffman compression",
