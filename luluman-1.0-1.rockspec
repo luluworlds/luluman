@@ -1,7 +1,7 @@
-package = "huffman"
+package = "luluman"
 version = "1.0-1"
 source = {
-   url = "." -- not online yet!
+   url = "git://github.com/luluworlds/luluman"
 }
 build = {
    type = "builtin",
