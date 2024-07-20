@@ -17,6 +17,6 @@ source = {
 build = {
    type = "builtin",
    modules = {
-      luluman = { "huffman.c", "luluman.c" }
+      luluman = { "src/huffman.c", "src/luluman.c" }
    }
 }

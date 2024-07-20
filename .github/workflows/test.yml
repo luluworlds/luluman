@@ -33,6 +33,9 @@ jobs:
         luarocks make --local
         lua ./spec/*.lua
 
-    - name: Test install
-      run: |
-        luarocks install --local luluman-*.rockspec
+    # this depends on the tag being pushed to github
+    # so this would always fail before a release
+    # thats annoying so lets not test it for now
+    # - name: Test install
+    #   run: |
+    #     luarocks install --local luluman-*.rockspec
