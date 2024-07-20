@@ -1,6 +1,6 @@
 package = "luluman"
 rockspec_format = "3.0"
-version = "1.0-2"
+version = "2.0-0"
 description = {
    summary = "teeworlds huffman compression",
    detailed = "lua bindings for the teeworlds huffman compression code written in C",
@@ -12,11 +12,11 @@ description = {
 }
 source = {
    url = "git://github.com/luluworlds/luluman",
-   tag = "1.0-2"
+   tag = "2.0-0"
 }
 build = {
    type = "builtin",
    modules = {
-      huffman = "huffman.c"
+      luluman = { "huffman.c", "luluman.c" }
    }
 }

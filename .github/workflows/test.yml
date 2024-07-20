@@ -30,6 +30,9 @@ jobs:
 
     - name: Run tests
       run: |
-        luarocks install --local luluman-*.rockspec
+        luarocks make --local
         lua ./spec/*.lua
 
+    - name: Test install
+      run: |
+        luarocks install --local luluman-*.rockspec

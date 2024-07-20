@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "huffman.h"
+
 inline void mem_zero(void *block,unsigned size)
 {
 	memset(block, 0, size);
@@ -369,29 +371,3 @@ int Decompress(const void *pInput, long InputSize, void *pOutput, int OutputSize
 	return (int)(pDst - (const unsigned char *)pOutput);
 }
 
-
-#include <lua5.1/lua.h>
-#include <lua5.1/lauxlib.h>
-
-int huff_decompress(lua_State* L)
-{
-	const char *pInput = lua_tostring(L, -2);
-	lua_Integer Size = lua_tointeger(L, -1);
-
-	Init(0);
-	unsigned char aOutput[4048];
-	int DecompressedSize = Decompress(pInput, Size, aOutput, sizeof(aOutput));
-	lua_pushlstring(L, (const char *)aOutput, DecompressedSize);
-
-	return 1;
-}
-
-int luaopen_huffman(lua_State* L) {
-	lua_newtable(L);
-	lua_pushcfunction(L, huff_decompress);
-	lua_setfield(L, -2, "decompress");
-	return 1;
-}
-
-// sudo luarocks make
-// echo 'h = require("huffman");r = h.decompress(string.char(0x1c, 0xa5, 0xb8, 0x01), 4);print(r)' |  lua - 
