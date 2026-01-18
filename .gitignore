@@ -1,4 +1,5 @@
 *.o
 *.so
 compile_commands.json
+*.rock
 
