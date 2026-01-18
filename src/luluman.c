@@ -1,17 +1,5 @@
-#if defined __has_include
-#if __has_include (<lua5.1/lua.h>)
-#include <lua5.1/lua.h>
-#include <lua5.1/lauxlib.h>
-#elif __has_include (<lua5.3/lua.h>)
-#include <lua5.3/lua.h>
-#include <lua5.3/lauxlib.h>
-#else
-#error "missing lua C headers"
-#endif
-#else
-#include <lua5.1/lua.h>
-#include <lua5.1/lauxlib.h>
-#endif
+#include <lua.h>
+#include <lauxlib.h>
 
 #include "huffman.h"
 
