@@ -17,3 +17,17 @@ local text = "hello"
 data = huffman.compress(text, #text)
 assert(text == huffman.decompress(data, #data))
 ```
+
+## development
+
+You can build the library from source using luarocks.
+
+```
+luarocks make --local
+```
+
+If your editor supports compile_commands.json you can help the lsp generating it like this.
+
+```
+bear -- make
+```
